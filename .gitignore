@@ -1,0 +1,51 @@
+# IDE
+.idea
+.vscode
+.vscode/*
+!.vscode/extensions.json
+
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# production
+dist
+dist-ssr
+dev-dist
+
+# misc
+.DS_Store
+*.local
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# files that appear when building ts
+vite.config.js
+vite.config.d.ts
+watching-css-modules.js
+watching-css-modules.d.ts
+vite-plugin-css-variables.js
+vite-plugin-css-variables.d.ts
+tsconfig.node.tsbuildinfo
+tsconfig.app.tsbuildinfo
+tsconfig.tsbuildinfo
+
+.env
+.aider*
+.gitlab.nvim
