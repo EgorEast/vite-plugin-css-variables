@@ -78,7 +78,6 @@ const formatFile = async (
   filePath: string,
   eslint: ESLint | null,
   prettierConfig: null | prettier.Options,
-  // eslint-disable-next-line sonarjs/cognitive-complexity
 ) => {
   try {
     let content = await fs.readFile(filePath, "utf-8");
@@ -251,7 +250,6 @@ export const cssVariablesPlugin = (options: PluginOptions): Plugin => {
     prettierConfig: null | prettier.Options;
   } | null = null;
 
-  // Функция для генерации CSS
   const generateCss = async () => {
     try {
       if (!formattingTools)
@@ -298,32 +296,27 @@ export const cssVariablesPlugin = (options: PluginOptions): Plugin => {
   };
 
   return {
-    // Запускаем первоначальную генерацию при старте
     async buildStart() {
       await generateCss();
     },
-    // Настраиваем watcher только для конфиг-файла
     configureServer(server) {
       const watcher = server.watcher;
       let debounceTimer: NodeJS.Timeout | null = null;
 
-      // Добавляем только указанный конфиг-файл в watcher
       watcher.add(resolvedOptions.configPath);
 
-      // Обработчик изменений с debounce
       const handleChange = async () => {
         if (debounceTimer) clearTimeout(debounceTimer);
 
         debounceTimer = setTimeout(async () => {
           const success = await generateCss();
           if (success)
-            // Отправляем клиенту команду на обновление CSS без полной перезагрузки страницы
             server.ws.send({
               data: { updated: true },
               event: "css-variables-updated",
               type: "custom",
             });
-        }, 100); // Задержка 100мс для debounce
+        }, 100);
       };
 
       watcher.on("change", (changedPath) => {
@@ -339,7 +332,6 @@ export const cssVariablesPlugin = (options: PluginOptions): Plugin => {
 
     name: "vite-plugin-css-variables",
 
-    // Добавляем обработчик для клиентской части
     transformIndexHtml: {
       handler(html) {
         return {
