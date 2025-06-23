@@ -1,7 +1,15 @@
 {
   "name": "vite-plugin-css-variables",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vite plugin to generate CSS variables from JavaScript/TypeScript config",
+  "homepage": "https://github.com/EgorEast/vite-plugin-css-variables#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EgorEast/vite-plugin-css-variables.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EgorEast/vite-plugin-css-variables/issues"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -22,16 +30,16 @@
   "author": "Your Name",
   "license": "MIT",
   "peerDependencies": {
-    "vite": "^3.0.0 || ^4.0.0 || ^5.0.0"
+    "vite": "^5.0.0 || ^6.0.0"
   },
   "dependencies": {
-    "eslint": "^9.29.0",
-    "prettier": "^3.5.3"
+    "eslint": "^9.19.0",
+    "prettier": "^3.4.2"
   },
   "devDependencies": {
-    "@types/node": "^24.0.3",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5",
-    "vitest": "^3.2.4"
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11",
+    "vitest": "^3.0.3"
   }
 }
